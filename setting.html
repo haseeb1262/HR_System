@@ -1,0 +1,890 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Nexora HCM Lite HR workspace">
+
+        <title>Company Settings | Nexora HCM Lite</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        >
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        >
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+            rel="stylesheet"
+        >
+
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+
+    <body class="dashboard-page settings-page">
+        <div class="app-shell">
+            <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+            <aside
+                class="app-sidebar"
+                id="main-navigation"
+                aria-label="Main navigation"
+            >
+                <a href="admin.html" class="sidebar-brand">
+                    <span class="sidebar-brand__mark">N</span>
+
+                    <span class="sidebar-brand__text">
+                        <span class="sidebar-brand__name">Nexora</span>
+                        <span class="sidebar-brand__tagline">
+                            HCM Lite · HR Solutions
+                        </span>
+                    </span>
+                </a>
+
+                <div class="sidebar-workspace">
+                    <span class="sidebar-workspace__label">WORKSPACE</span>
+                    <strong data-company-name>Nexora HR Solutions</strong>
+                </div>
+
+                <nav class="sidebar-section">
+                    <div class="sidebar-section__label">Workspace</div>
+
+                    <ul class="sidebar-nav">
+                        <li>
+                            <a href="admin.html" class="sidebar-nav__link">
+                                <i class="bi bi-grid-1x2"></i>
+                                <span class="sidebar-nav__text">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employees.html" class="sidebar-nav__link">
+                                <i class="bi bi-people"></i>
+                                <span class="sidebar-nav__text">Employees</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="leaves.html" class="sidebar-nav__link">
+                                <i class="bi bi-calendar2-check"></i>
+                                <span class="sidebar-nav__text">Leave Management</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="payship.html" class="sidebar-nav__link">
+                                <i class="bi bi-wallet2"></i>
+                                <span class="sidebar-nav__text">Payslips</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employee.html" class="sidebar-nav__link">
+                                <i class="bi bi-person-badge"></i>
+                                <span class="sidebar-nav__text">Employee Portal</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="setting.html"
+                                class="sidebar-nav__link active"
+                                aria-current="page"
+                            >
+                                <i class="bi bi-gear"></i>
+                                <span class="sidebar-nav__text">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-bottom-profile">
+                    <span class="avatar">AD</span>
+
+                    <span>
+                        <strong data-admin-name>Admin User</strong>
+                        <small>Administrator · Demo</small>
+                    </span>
+
+                    <a
+                        href="index.html"
+                        aria-label="Sign out"
+                        title="Sign out"
+                    >
+                        <i class="bi bi-box-arrow-right"></i>
+                    </a>
+                </div>
+
+                <footer class="sidebar-footer">
+                    <div class="sidebar-footer__caption">
+                        People · Performance · Progress
+                    </div>
+                </footer>
+            </aside>
+
+            <main class="app-main">
+                <header class="app-topbar">
+                    <div class="topbar__left">
+                        <button
+                            class="btn-icon"
+                            type="button"
+                            data-sidebar-toggle
+                            aria-label="Toggle navigation"
+                            aria-controls="main-navigation"
+                            aria-expanded="false"
+                        >
+                            <i class="bi bi-list fs-5"></i>
+                        </button>
+
+                        <div>
+                            <div class="topbar-context">Nexora / Workspace</div>
+                            <div class="fw-semibold" data-page-context>
+                                Company Settings
+                            </div>
+                        </div>
+                    </div>
+
+                    <form
+                        class="topbar-global-search"
+                        data-global-search
+                        role="search"
+                    >
+                        <i class="bi bi-search" aria-hidden="true"></i>
+
+                        <input
+                            type="search"
+                            name="q"
+                            aria-label="Search employees"
+                            placeholder="Search employees or ID"
+                            maxlength="120"
+                        >
+
+                        <button type="submit" aria-label="Submit search">
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                    <div class="topbar__right">
+                        <div
+                            class="dashboard-date d-none d-md-block"
+                            data-current-date
+                        ></div>
+
+                        <button
+                            class="btn-icon notification-button"
+                            type="button"
+                            aria-label="Notifications"
+                            title="Demo notifications"
+                        >
+                            <i class="bi bi-bell"></i>
+                        </button>
+
+                        <div class="topbar__divider"></div>
+
+                        <div class="profile-menu" data-profile-menu>
+                            <span class="avatar">AD</span>
+
+                            <span class="profile-menu__details">
+                                <span class="profile-menu__name" data-admin-name>
+                                    Admin User
+                                </span>
+
+                                <span class="profile-menu__role">
+                                    Administrator
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="page-container">
+                    <section class="module-page-header">
+                        <div>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="admin.html">Dashboard</a>
+                                    </li>
+
+                                    <li
+                                        class="breadcrumb-item active"
+                                        aria-current="page"
+                                    >
+                                        Settings
+                                    </li>
+                                </ol>
+                            </nav>
+
+                            <h1 class="page-title">Company Settings</h1>
+
+                            <p class="page-subtitle">
+                                Manage your organization’s profile, attendance
+                                rules, leave policies, and working schedule.
+                            </p>
+                        </div>
+
+                        <div class="settings-header-status">
+                            <span class="save-status-dot"></span>
+
+                            <span id="settings-save-status" role="status">
+                                All changes saved
+                            </span>
+                        </div>
+                    </section>
+
+                    <div
+                        id="settings-alert"
+                        class="alert"
+                        role="status"
+                        hidden
+                    ></div>
+
+                    <form id="settings-form" novalidate>
+                        <!-- Company Profile -->
+                        <section class="app-card settings-section">
+                            <div class="app-card__header">
+                                <div class="settings-section-title">
+                                    <span class="settings-section-icon">
+                                        <i class="bi bi-building"></i>
+                                    </span>
+
+                                    <div>
+                                        <h2 class="section-title">
+                                            Company profile
+                                        </h2>
+
+                                        <p class="section-subtitle">
+                                            Basic information shown across your
+                                            workspace.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="app-card__body">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label
+                                            class="form-label"
+                                            for="setting-company-name"
+                                        >
+                                            Company name
+                                            <span class="text-danger">*</span>
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            id="setting-company-name"
+                                            name="companyName"
+                                            required
+                                        >
+
+                                        <div class="invalid-feedback">
+                                            Enter your company name.
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label
+                                            class="form-label"
+                                            for="setting-company-email"
+                                        >
+                                            Company email
+                                            <span class="text-danger">*</span>
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            id="setting-company-email"
+                                            name="companyEmail"
+                                            type="email"
+                                            required
+                                        >
+
+                                        <div class="invalid-feedback">
+                                            Enter a valid company email.
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label
+                                            class="form-label"
+                                            for="setting-phone"
+                                        >
+                                            Contact number
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            id="setting-phone"
+                                            name="phone"
+                                            type="tel"
+                                            autocomplete="tel"
+                                        >
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label
+                                            class="form-label"
+                                            for="setting-website"
+                                        >
+                                            Website
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            id="setting-website"
+                                            name="website"
+                                            type="url"
+                                            placeholder="https://example.com"
+                                        >
+
+                                        <div class="invalid-feedback">
+                                            Enter a valid website URL including
+                                            https://.
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label
+                                            class="form-label"
+                                            for="setting-address"
+                                        >
+                                            Office address
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            id="setting-address"
+                                            name="address"
+                                            autocomplete="street-address"
+                                        >
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label
+                                            class="form-label"
+                                            for="setting-city"
+                                        >
+                                            City
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            id="setting-city"
+                                            name="city"
+                                            autocomplete="address-level2"
+                                        >
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label
+                                            class="form-label"
+                                            for="setting-country"
+                                        >
+                                            Country
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            id="setting-country"
+                                            name="country"
+                                            autocomplete="country-name"
+                                        >
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label
+                                            class="form-label"
+                                            for="setting-registration"
+                                        >
+                                            Registration number
+                                            <span class="text-muted fw-normal">
+                                                (optional)
+                                            </span>
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            id="setting-registration"
+                                            name="registrationNumber"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Attendance and Work Schedule -->
+                        <section class="app-card settings-section">
+                            <div class="app-card__header">
+                                <div class="settings-section-title">
+                                    <span
+                                        class="settings-section-icon settings-section-icon--green"
+                                    >
+                                        <i class="bi bi-clock-history"></i>
+                                    </span>
+
+                                    <div>
+                                        <h2 class="section-title">
+                                            Attendance &amp; work schedule
+                                        </h2>
+
+                                        <p class="section-subtitle">
+                                            Configure the default schedule used
+                                            by this demo workspace.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="app-card__body">
+                                <div class="row g-3">
+                                    <div class="col-sm-6 col-lg-3">
+                                        <label
+                                            class="form-label"
+                                            for="setting-work-start"
+                                        >
+                                            Work start time
+                                        </label>
+
+                                        <input
+                                            type="time"
+                                            class="form-control"
+                                            id="setting-work-start"
+                                            required
+                                        >
+                                    </div>
+
+                                    <div class="col-sm-6 col-lg-3">
+                                        <label
+                                            class="form-label"
+                                            for="setting-work-end"
+                                        >
+                                            Work end time
+                                        </label>
+
+                                        <input
+                                            type="time"
+                                            class="form-control"
+                                            id="setting-work-end"
+                                            required
+                                        >
+                                    </div>
+
+                                    <div class="col-sm-6 col-lg-3">
+                                        <label
+                                            class="form-label"
+                                            for="setting-grace"
+                                        >
+                                            Grace period (minutes)
+                                        </label>
+
+                                        <input
+                                            type="number"
+                                            min="0"
+                                            max="180"
+                                            class="form-control"
+                                            id="setting-grace"
+                                            required
+                                        >
+                                    </div>
+
+                                    <div class="col-sm-6 col-lg-3">
+                                        <label
+                                            class="form-label"
+                                            for="setting-hours"
+                                        >
+                                            Standard work hours/day
+                                        </label>
+
+                                        <input
+                                            type="number"
+                                            min="0.5"
+                                            max="24"
+                                            step="0.5"
+                                            class="form-control"
+                                            id="setting-hours"
+                                            required
+                                        >
+                                    </div>
+
+                                    <div class="col-12">
+                                        <span class="form-label d-block">
+                                            Working days
+                                            <span class="text-danger">*</span>
+                                        </span>
+
+                                        <div
+                                            class="working-day-selector"
+                                            id="setting-working-days"
+                                        >
+                                            <label>
+                                                <input type="checkbox" value="1">
+                                                <span>Mon</span>
+                                            </label>
+
+                                            <label>
+                                                <input type="checkbox" value="2">
+                                                <span>Tue</span>
+                                            </label>
+
+                                            <label>
+                                                <input type="checkbox" value="3">
+                                                <span>Wed</span>
+                                            </label>
+
+                                            <label>
+                                                <input type="checkbox" value="4">
+                                                <span>Thu</span>
+                                            </label>
+
+                                            <label>
+                                                <input type="checkbox" value="5">
+                                                <span>Fri</span>
+                                            </label>
+
+                                            <label>
+                                                <input type="checkbox" value="6">
+                                                <span>Sat</span>
+                                            </label>
+
+                                            <label>
+                                                <input type="checkbox" value="0">
+                                                <span>Sun</span>
+                                            </label>
+                                        </div>
+
+                                        <div
+                                            class="invalid-feedback d-block"
+                                            id="setting-days-error"
+                                            hidden
+                                        >
+                                            Select at least one working day.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Leave Policy -->
+                        <section class="app-card settings-section">
+                            <div class="app-card__header">
+                                <div class="settings-section-title">
+                                    <span
+                                        class="settings-section-icon settings-section-icon--amber"
+                                    >
+                                        <i class="bi bi-calendar2-heart"></i>
+                                    </span>
+
+                                    <div>
+                                        <h2 class="section-title">
+                                            Leave policy
+                                        </h2>
+
+                                        <p class="section-subtitle">
+                                            Editable demo allowances; confirm
+                                            local requirements before using
+                                            operationally.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="app-card__body">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label
+                                            class="form-label"
+                                            for="setting-annual"
+                                        >
+                                            Annual leave allowance
+                                        </label>
+
+                                        <div class="input-group">
+                                            <input
+                                                type="number"
+                                                min="0"
+                                                max="365"
+                                                class="form-control"
+                                                id="setting-annual"
+                                                required
+                                            >
+
+                                            <span class="input-group-text">
+                                                days
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label
+                                            class="form-label"
+                                            for="setting-sick"
+                                        >
+                                            Sick leave allowance
+                                        </label>
+
+                                        <div class="input-group">
+                                            <input
+                                                type="number"
+                                                min="0"
+                                                max="365"
+                                                class="form-control"
+                                                id="setting-sick"
+                                                required
+                                            >
+
+                                            <span class="input-group-text">
+                                                days
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label
+                                            class="form-label"
+                                            for="setting-casual"
+                                        >
+                                            Casual leave allowance
+                                        </label>
+
+                                        <div class="input-group">
+                                            <input
+                                                type="number"
+                                                min="0"
+                                                max="365"
+                                                class="form-control"
+                                                id="setting-casual"
+                                                required
+                                            >
+
+                                            <span class="input-group-text">
+                                                days
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- General Preferences -->
+                        <section class="app-card settings-section">
+                            <div class="app-card__header">
+                                <div class="settings-section-title">
+                                    <span
+                                        class="settings-section-icon settings-section-icon--violet"
+                                    >
+                                        <i class="bi bi-sliders"></i>
+                                    </span>
+
+                                    <div>
+                                        <h2 class="section-title">
+                                            General preferences
+                                        </h2>
+
+                                        <p class="section-subtitle">
+                                            Display preferences for this
+                                            browser-based demo.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="app-card__body">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label
+                                            class="form-label"
+                                            for="setting-currency"
+                                        >
+                                            Default currency
+                                        </label>
+
+                                        <select
+                                            class="form-select"
+                                            id="setting-currency"
+                                        >
+                                            <option value="PKR">
+                                                PKR — Pakistani Rupee
+                                            </option>
+
+                                            <option value="USD">
+                                                USD — US Dollar
+                                            </option>
+
+                                            <option value="GBP">
+                                                GBP — British Pound
+                                            </option>
+
+                                            <option value="EUR">
+                                                EUR — Euro
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label
+                                            class="form-label"
+                                            for="setting-date-format"
+                                        >
+                                            Date format
+                                        </label>
+
+                                        <select
+                                            class="form-select"
+                                            id="setting-date-format"
+                                        >
+                                            <option value="dmy">
+                                                DD/MM/YYYY
+                                            </option>
+
+                                            <option value="mdy">
+                                                MM/DD/YYYY
+                                            </option>
+
+                                            <option value="iso">
+                                                YYYY-MM-DD
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <span class="form-label d-block">
+                                            Notification preferences
+                                        </span>
+
+                                        <div class="settings-preferences">
+                                            <label class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    id="setting-notify-leaves"
+                                                >
+
+                                                <span class="form-check-label">
+                                                    Leave request updates
+                                                </span>
+                                            </label>
+
+                                            <label class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    id="setting-notify-attendance"
+                                                >
+
+                                                <span class="form-check-label">
+                                                    Attendance reminders
+                                                </span>
+                                            </label>
+
+                                            <label class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    id="setting-notify-payslip"
+                                                >
+
+                                                <span class="form-check-label">
+                                                    Payslip updates
+                                                </span>
+                                            </label>
+                                        </div>
+
+                                        <p class="form-text mb-0">
+                                            Preferences are saved locally. No
+                                            email, SMS, or push notifications
+                                            are sent.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Save Settings -->
+                        <div class="settings-savebar">
+                            <span class="text-muted small">
+                                <i class="bi bi-shield-check me-1"></i>
+                                Saved in this browser only
+                            </span>
+
+                            <div>
+                                <button
+                                    class="btn btn-outline-secondary"
+                                    id="settings-reset"
+                                    type="button"
+                                >
+                                    <i
+                                        class="bi bi-arrow-counterclockwise me-1"
+                                    ></i>
+                                    Reset to saved values
+                                </button>
+
+                                <button
+                                    class="btn btn-primary"
+                                    type="submit"
+                                >
+                                    <i class="bi bi-check2 me-1"></i>
+                                    Save changes
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <footer class="dashboard-footer">
+                        HCM Lite
+                        <span>·</span>
+                        People • Performance • Progress
+
+                        <span class="ms-auto">
+                            Demo workspace · Data stays in this browser
+                        </span>
+                    </footer>
+                </div>
+            </main>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div
+            class="toast-container position-fixed bottom-0 end-0 p-3"
+            style="z-index: 1090"
+        >
+            <div
+                id="global-toast"
+                class="toast employee-toast"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+            >
+                <div class="toast-header">
+                    <i class="bi bi-check-circle toast-status-icon"></i>
+
+                    <strong class="me-auto" id="global-toast-title">
+                        Updated
+                    </strong>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+
+                <div class="toast-body" id="global-toast-message"></div>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

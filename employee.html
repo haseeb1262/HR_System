@@ -1,0 +1,618 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Nexora HCM Lite HR workspace">
+
+        <title>Employee Portal | Nexora HCM Lite</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+
+    <body class="dashboard-page employee-portal-page">
+        <div class="app-shell">
+            <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+            <aside class="app-sidebar" id="main-navigation" aria-label="Main navigation">
+                <a href="admin.html" class="sidebar-brand">
+                    <span class="sidebar-brand__mark">N</span>
+                    <span class="sidebar-brand__text">
+                        <span class="sidebar-brand__name">Nexora</span>
+                        <span class="sidebar-brand__tagline">HCM Lite · HR Solutions</span>
+                    </span>
+                </a>
+
+                <div class="sidebar-workspace">
+                    <span class="sidebar-workspace__label">WORKSPACE</span>
+                    <strong data-company-name>Nexora HR Solutions</strong>
+                </div>
+
+                <nav class="sidebar-section">
+                    <div class="sidebar-section__label">Workspace</div>
+
+                    <ul class="sidebar-nav">
+                        <li>
+                            <a href="admin.html" class="sidebar-nav__link">
+                                <i class="bi bi-grid-1x2"></i>
+                                <span class="sidebar-nav__text">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employees.html" class="sidebar-nav__link">
+                                <i class="bi bi-people"></i>
+                                <span class="sidebar-nav__text">Employees</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="leaves.html" class="sidebar-nav__link">
+                                <i class="bi bi-calendar2-check"></i>
+                                <span class="sidebar-nav__text">Leave Management</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="payship.html" class="sidebar-nav__link">
+                                <i class="bi bi-wallet2"></i>
+                                <span class="sidebar-nav__text">Payslips</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employee.html" class="sidebar-nav__link active" aria-current="page">
+                                <i class="bi bi-person-badge"></i>
+                                <span class="sidebar-nav__text">Employee Portal</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="setting.html" class="sidebar-nav__link">
+                                <i class="bi bi-gear"></i>
+                                <span class="sidebar-nav__text">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-bottom-profile">
+                    <span class="avatar">AD</span>
+                    <span>
+                        <strong data-admin-name>Admin User</strong>
+                        <small>Administrator · Demo</small>
+                    </span>
+                    <a href="index.html" aria-label="Sign out" title="Sign out">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </a>
+                </div>
+
+                <footer class="sidebar-footer">
+                    <div class="sidebar-footer__caption">
+                        People · Performance · Progress
+                    </div>
+                </footer>
+            </aside>
+
+            <main class="app-main">
+                <header class="app-topbar">
+                    <div class="topbar__left">
+                        <button
+                            class="btn-icon"
+                            type="button"
+                            data-sidebar-toggle
+                            aria-label="Toggle navigation"
+                            aria-controls="main-navigation"
+                            aria-expanded="false"
+                        >
+                            <i class="bi bi-list fs-5"></i>
+                        </button>
+
+                        <div>
+                            <div class="topbar-context">Nexora / Workspace</div>
+                            <div class="fw-semibold" data-page-context>Employee Portal</div>
+                        </div>
+                    </div>
+
+                    <form class="topbar-global-search" data-global-search role="search">
+                        <i class="bi bi-search" aria-hidden="true"></i>
+                        <input
+                            type="search"
+                            name="q"
+                            aria-label="Search employees"
+                            placeholder="Search employees or ID"
+                            maxlength="120"
+                        >
+                        <button type="submit" aria-label="Submit search">
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                    <div class="topbar__right">
+                        <div class="dashboard-date d-none d-md-block" data-current-date></div>
+
+                        <button
+                            class="btn-icon notification-button"
+                            type="button"
+                            aria-label="Notifications"
+                            title="Demo notifications"
+                        >
+                            <i class="bi bi-bell"></i>
+                        </button>
+
+                        <div class="topbar__divider"></div>
+
+                        <div class="profile-menu" data-profile-menu>
+                            <span class="avatar">AD</span>
+                            <span class="profile-menu__details">
+                                <span class="profile-menu__name" data-admin-name>Admin User</span>
+                                <span class="profile-menu__role">Administrator</span>
+                            </span>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="page-container">
+                    <section class="dashboard-welcome employee-self-welcome">
+                        <div>
+                            <span class="dashboard-eyebrow">
+                                <span></span>
+                                YOUR EMPLOYEE SPACE
+                            </span>
+
+                            <h1 class="page-title" id="self-greeting">
+                                Welcome to your portal
+                            </h1>
+
+                            <p class="page-subtitle" id="self-subtitle">
+                                Your attendance, leave balance, and requests in one place.
+                            </p>
+
+                            <div class="dashboard-welcome__date">
+                                <i class="bi bi-calendar3"></i>
+                                <span data-current-date></span>
+                            </div>
+                        </div>
+
+                        <div class="self-identity">
+                            <span class="employee-avatar employee-avatar--2" id="self-avatar">EP</span>
+
+                            <div>
+                                <strong id="self-name">Demo employee</strong>
+                                <small id="self-role">Select an employee profile</small>
+                            </div>
+
+                            <label class="visually-hidden" for="self-employee-select">
+                                Select employee profile
+                            </label>
+
+                            <select id="self-employee-select" class="form-select form-select-sm">
+                                <option value="">Choose employee</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <div id="self-alert" class="alert" role="status" hidden></div>
+
+                    <section class="self-top-grid">
+                        <article class="app-card attendance-action-card">
+                            <div class="app-card__header">
+                                <div>
+                                    <span class="module-eyebrow">SIMULATED ATTENDANCE</span>
+                                    <h2 class="section-title">Today's attendance</h2>
+                                    <p class="section-subtitle" id="self-today-date">
+                                        Local browser time
+                                    </p>
+                                </div>
+
+                                <span
+                                    id="self-attendance-badge"
+                                    class="employee-status employee-status--inactive"
+                                >
+                                    Not checked in
+                                </span>
+                            </div>
+
+                            <div class="attendance-action-main">
+                                <div class="attendance-clock-icon">
+                                    <i class="bi bi-clock-history"></i>
+                                </div>
+
+                                <div>
+                                    <span class="attendance-action-label">Current session</span>
+                                    <strong id="self-attendance-status">Not checked in</strong>
+                                    <p id="self-attendance-help">
+                                        Start your attendance session when you are ready.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="attendance-time-grid">
+                                <div>
+                                    <span>Check in</span>
+                                    <strong id="self-check-in">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Check out</span>
+                                    <strong id="self-check-out">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Duration</span>
+                                    <strong id="self-duration">—</strong>
+                                </div>
+                            </div>
+
+                            <div class="attendance-actions">
+                                <button class="btn btn-primary" id="self-check-in-btn" type="button">
+                                    <i class="bi bi-box-arrow-in-right me-1"></i>
+                                    Check in
+                                </button>
+
+                                <button
+                                    class="btn btn-outline-primary"
+                                    id="self-check-out-btn"
+                                    type="button"
+                                    disabled
+                                >
+                                    <i class="bi bi-box-arrow-right me-1"></i>
+                                    Check out
+                                </button>
+                            </div>
+
+                            <p class="attendance-demo-note">
+                                <i class="bi bi-info-circle me-1"></i>
+                                Frontend demo only. This does not verify location, identity, or secure timekeeping.
+                            </p>
+                        </article>
+
+                        <article class="app-card self-profile-card">
+                            <div class="app-card__header">
+                                <div>
+                                    <h2 class="section-title">Your profile</h2>
+                                    <p class="section-subtitle">
+                                        Details from the employee directory
+                                    </p>
+                                </div>
+
+                                <i class="bi bi-person-vcard self-profile-icon"></i>
+                            </div>
+
+                            <div class="self-profile-details">
+                                <div>
+                                    <span>Employee ID</span>
+                                    <strong id="self-id">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Email</span>
+                                    <strong id="self-email">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Department</span>
+                                    <strong id="self-department">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Employment status</span>
+                                    <strong id="self-status">—</strong>
+                                </div>
+                            </div>
+
+                            <a href="employees.html" class="text-link">
+                                Employee directory
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </article>
+                    </section>
+
+                    <section class="self-leave-balances">
+                        <div class="module-section-heading">
+                            <div>
+                                <h2 class="section-title">Your leave balance</h2>
+                                <p class="section-subtitle">
+                                    Approved leave is counted as used; pending requests are not deducted.
+                                </p>
+                            </div>
+
+                            <span class="subtle-pill">Configurable demo policy</span>
+                        </div>
+
+                        <div class="self-balance-grid">
+                            <article class="self-balance-card">
+                                <span>
+                                    <i class="bi bi-sun"></i>
+                                    Annual leave
+                                </span>
+
+                                <strong id="balance-annual">
+                                    0 <small>days left</small>
+                                </strong>
+
+                                <div class="self-balance-track">
+                                    <span id="balance-annual-bar"></span>
+                                </div>
+
+                                <small id="balance-annual-meta">Allowance not configured</small>
+                            </article>
+
+                            <article class="self-balance-card">
+                                <span>
+                                    <i class="bi bi-heart-pulse"></i>
+                                    Sick leave
+                                </span>
+
+                                <strong id="balance-sick">
+                                    0 <small>days left</small>
+                                </strong>
+
+                                <div class="self-balance-track">
+                                    <span id="balance-sick-bar"></span>
+                                </div>
+
+                                <small id="balance-sick-meta">Allowance not configured</small>
+                            </article>
+
+                            <article class="self-balance-card">
+                                <span>
+                                    <i class="bi bi-calendar2-week"></i>
+                                    Casual leave
+                                </span>
+
+                                <strong id="balance-casual">
+                                    0 <small>days left</small>
+                                </strong>
+
+                                <div class="self-balance-track">
+                                    <span id="balance-casual-bar"></span>
+                                </div>
+
+                                <small id="balance-casual-meta">Allowance not configured</small>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="app-card self-history-card">
+                        <div class="app-card__header">
+                            <div>
+                                <h2 class="section-title">Attendance history</h2>
+                                <p class="section-subtitle">
+                                    Your latest saved attendance sessions
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table employee-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Check-in</th>
+                                        <th>Check-out</th>
+                                        <th>Duration</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="self-attendance-history">
+                                    <tr>
+                                        <td colspan="5">
+                                            <div class="employee-empty-state">
+                                                <span class="employee-empty-state__icon">
+                                                    <i class="bi bi-clock"></i>
+                                                </span>
+                                                <h3>No attendance history</h3>
+                                                <p>
+                                                    Your completed sessions will appear here.
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="app-card self-requests-card">
+                        <div class="app-card__header">
+                            <div>
+                                <h2 class="section-title">My leave requests</h2>
+                                <p class="section-subtitle">
+                                    Track the status of your submitted requests
+                                </p>
+                            </div>
+
+                            <button class="btn btn-primary btn-sm" id="self-open-leave" type="button">
+                                <i class="bi bi-plus-lg me-1"></i>
+                                Apply for leave
+                            </button>
+                        </div>
+
+                        <div id="self-leave-list" class="self-leave-list">
+                            <div class="employee-empty-state">
+                                <span class="employee-empty-state__icon">
+                                    <i class="bi bi-calendar2-check"></i>
+                                </span>
+                                <h3>No leave requests yet</h3>
+                                <p>
+                                    When you apply for leave, your requests and decisions will appear here.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div
+                        class="modal fade employee-modal"
+                        id="self-leave-modal"
+                        tabindex="-1"
+                        aria-labelledby="self-leave-modal-title"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <form id="self-leave-form" novalidate>
+                                    <div class="modal-header">
+                                        <div>
+                                            <h2 class="modal-title fs-5" id="self-leave-modal-title">
+                                                Apply for leave
+                                            </h2>
+                                            <p class="section-subtitle mb-0">
+                                                Calendar days are counted inclusively in this demo.
+                                            </p>
+                                        </div>
+
+                                        <button
+                                            class="btn-close"
+                                            type="button"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"
+                                        ></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div id="self-leave-feedback" class="alert alert-danger" hidden></div>
+
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <label class="form-label" for="self-leave-type">
+                                                    Leave type
+                                                </label>
+
+                                                <select id="self-leave-type" class="form-select" required>
+                                                    <option value="">Choose leave type</option>
+                                                    <option>Annual Leave</option>
+                                                    <option>Sick Leave</option>
+                                                    <option>Casual Leave</option>
+                                                    <option>Unpaid Leave</option>
+                                                </select>
+
+                                                <div class="invalid-feedback">
+                                                    Choose a leave type.
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="form-label" for="self-leave-start">
+                                                    Start date
+                                                </label>
+
+                                                <input
+                                                    id="self-leave-start"
+                                                    type="date"
+                                                    class="form-control"
+                                                    required
+                                                >
+
+                                                <div class="invalid-feedback">
+                                                    Choose a valid start date.
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="form-label" for="self-leave-end">
+                                                    End date
+                                                </label>
+
+                                                <input
+                                                    id="self-leave-end"
+                                                    type="date"
+                                                    class="form-control"
+                                                    required
+                                                >
+
+                                                <div class="invalid-feedback">
+                                                    End date must be on or after the start date.
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label class="form-label" for="self-leave-reason">
+                                                    Reason
+                                                </label>
+
+                                                <textarea
+                                                    id="self-leave-reason"
+                                                    class="form-control"
+                                                    rows="3"
+                                                    minlength="8"
+                                                    maxlength="1000"
+                                                    required
+                                                    placeholder="Briefly explain your request"
+                                                ></textarea>
+
+                                                <div class="invalid-feedback">
+                                                    Please provide a reason of at least 8 characters.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button
+                                            class="btn btn-light"
+                                            type="button"
+                                            data-bs-dismiss="modal"
+                                        >
+                                            Cancel
+                                        </button>
+
+                                        <button class="btn btn-primary" type="submit">
+                                            Submit request
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer class="dashboard-footer">
+                        HCM Lite <span>·</span> People • Performance • Progress
+                        <span class="ms-auto">
+                            Demo workspace · Data stays in this browser
+                        </span>
+                    </footer>
+                </div>
+            </main>
+        </div>
+
+        <div
+            class="toast-container position-fixed bottom-0 end-0 p-3"
+            style="z-index: 1090"
+        >
+            <div
+                id="global-toast"
+                class="toast employee-toast"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+            >
+                <div class="toast-header">
+                    <i class="bi bi-check-circle toast-status-icon"></i>
+                    <strong class="me-auto" id="global-toast-title">Updated</strong>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+
+                <div class="toast-body" id="global-toast-message"></div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

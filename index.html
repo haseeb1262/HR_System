@@ -1,0 +1,415 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Sign in to Nexora HCM Lite, the people operations workspace.">
+
+        <title>Sign in | Nexora HCM Lite</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+
+    <body class="auth-page">
+        <main class="auth-layout">
+
+            <section class="auth-story" aria-label="Nexora HCM Lite introduction">
+                <a class="auth-brand" href="index.html">
+                    <span class="auth-brand__mark">N</span>
+                    <span>
+                        <strong>Nexora HR Solutions</strong>
+                        <small>HCM Lite workspace</small>
+                    </span>
+                </a>
+
+                <div class="auth-story__content">
+                    <span class="auth-eyebrow">
+                        <span class="auth-eyebrow__dot"></span>
+                        PEOPLE OPERATIONS, MADE CLEAR
+                    </span>
+
+                    <h1>
+                        Great teams start with
+                        <span>better people experiences.</span>
+                    </h1>
+
+                    <p>
+                        Bring your people, daily HR workflows, and essential workforce insights together in one calm, connected workspace.
+                    </p>
+
+                    <div class="auth-illustration" aria-hidden="true">
+                        <div class="auth-illustration__orb auth-illustration__orb--one"></div>
+                        <div class="auth-illustration__orb auth-illustration__orb--two"></div>
+
+                        <div class="auth-mini-card auth-mini-card--main">
+                            <div class="auth-mini-card__top">
+                                <span class="auth-mini-icon">
+                                    <i class="bi bi-people"></i>
+                                </span>
+                                <span class="auth-mini-status">Workspace overview</span>
+                            </div>
+
+                            <div class="auth-mini-card__label">Your people, in focus</div>
+
+                            <div class="auth-mini-bars">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="auth-mini-card__foot">
+                                <span>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Everything in one place
+                                </span>
+                                <i class="bi bi-arrow-up-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="auth-float-card">
+                            <span class="auth-float-card__icon">
+                                <i class="bi bi-shield-check"></i>
+                            </span>
+                            <span>
+                                <strong>Built for clarity</strong>
+                                <small>Less admin, more people</small>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="auth-value-row">
+                        <span>
+                            <i class="bi bi-check2-circle"></i>
+                            Clear workflows
+                        </span>
+                        <span>
+                            <i class="bi bi-check2-circle"></i>
+                            Connected records
+                        </span>
+                        <span>
+                            <i class="bi bi-check2-circle"></i>
+                            Useful insights
+                        </span>
+                    </div>
+                </div>
+
+                <footer class="auth-story__footer">
+                    <span>People <b>•</b> Performance <b>•</b> Progress</span>
+                    <span>
+                        © <span data-current-year></span> Nexora HR Solutions
+                    </span>
+                </footer>
+            </section>
+
+            <section class="auth-panel" aria-labelledby="login-title">
+                <div class="auth-panel__inner">
+
+                    <div class="auth-mobile-brand">
+                        <span class="auth-brand__mark">N</span>
+                        <span>
+                            <strong>Nexora HR Solutions</strong>
+                            <small>HCM Lite</small>
+                        </span>
+                    </div>
+
+                    <div class="auth-form-heading">
+                        <span class="auth-form-kicker">YOUR WORKSPACE AWAITS</span>
+                        <h2 id="login-title">
+                            Welcome back<span class="auth-heading-period">.</span>
+                        </h2>
+                        <p id="auth-welcome-copy">
+                            Sign in to continue to your HCM Lite workspace.
+                        </p>
+                    </div>
+
+                    <div
+                        id="login-feedback"
+                        class="auth-feedback"
+                        role="status"
+                        aria-live="polite"
+                        hidden
+                    ></div>
+
+                    <form id="login-form" novalidate>
+                        <div class="mb-3">
+                            <label for="login-email" class="form-label">
+                                Work email
+                            </label>
+
+                            <div class="auth-input-wrap">
+                                <i class="bi bi-envelope" aria-hidden="true"></i>
+
+                                <input
+                                    class="form-control auth-input"
+                                    type="email"
+                                    id="login-email"
+                                    name="email"
+                                    placeholder="you@company.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                                <div class="invalid-feedback">
+                                    Enter a valid email address.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <label for="login-password" class="form-label">
+                                    Password
+                                </label>
+
+                                <a
+                                    href="#forgot-password"
+                                    id="forgot-password"
+                                    class="auth-inline-link"
+                                >
+                                    Forgot password?
+                                </a>
+                            </div>
+
+                            <div class="auth-input-wrap auth-password-wrap">
+                                <i class="bi bi-lock" aria-hidden="true"></i>
+
+                                <input
+                                    class="form-control auth-input"
+                                    type="password"
+                                    id="login-password"
+                                    name="password"
+                                    placeholder="Enter any demo password"
+                                    autocomplete="current-password"
+                                    required
+                                    minlength="1"
+                                >
+
+                                <button
+                                    type="button"
+                                    class="auth-password-toggle"
+                                    id="toggle-password"
+                                    aria-label="Show password"
+                                    aria-pressed="false"
+                                >
+                                    <i class="bi bi-eye" aria-hidden="true"></i>
+                                </button>
+
+                                <div class="invalid-feedback">
+                                    Password is required for the demo.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="auth-form-options">
+                            <label class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="remember-email"
+                                >
+                                <span class="form-check-label">
+                                    Remember my email
+                                </span>
+                            </label>
+
+                            <span class="auth-demo-chip">
+                                <i class="bi bi-lightning-charge" aria-hidden="true"></i>
+                                Demo access
+                            </span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="login-role" class="form-label">
+                                Continue as
+                            </label>
+
+                            <select
+                                id="login-role"
+                                class="form-select auth-input"
+                                required
+                            >
+                                <option value="admin">Administrator</option>
+                                <option value="employee">Employee</option>
+                            </select>
+                        </div>
+
+                        <button
+                            class="btn btn-primary auth-submit"
+                            type="submit"
+                            id="login-submit"
+                        >
+                            <span>Sign in to HCM Lite</span>
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                    <div class="auth-demo-note">
+                        <i class="bi bi-info-circle" aria-hidden="true"></i>
+                        <p>
+                            <strong>Demo environment.</strong>
+                            Use any valid email and a non-empty password. No real authentication takes place, and your password is never saved.
+                        </p>
+                    </div>
+
+                    <div class="auth-setup-link">
+                        <span>First time here?</span>
+                        <button
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#setup-modal"
+                        >
+                            Set up your workspace
+                            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div class="auth-panel-footer">
+                        By continuing, you’re entering a local frontend demonstration.
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <div
+            class="modal fade"
+            id="setup-modal"
+            tabindex="-1"
+            aria-labelledby="setup-title"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content auth-modal">
+
+                    <div class="modal-header">
+                        <div>
+                            <span class="auth-form-kicker">LET’S GET STARTED</span>
+                            <h2 class="modal-title fs-5 mt-1" id="setup-title">
+                                Set up your workspace
+                            </h2>
+                            <p class="text-muted small mb-0 mt-1">
+                                Add your company details to personalize this demo.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close setup"
+                        ></button>
+                    </div>
+
+                    <form id="setup-form" novalidate>
+                        <div class="modal-body">
+
+                            <div
+                                id="setup-feedback"
+                                class="auth-feedback"
+                                role="status"
+                                aria-live="polite"
+                                hidden
+                            ></div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="setup-company">
+                                    Company name
+                                </label>
+
+                                <input
+                                    class="form-control"
+                                    id="setup-company"
+                                    required
+                                    maxlength="100"
+                                    placeholder="Your company name"
+                                >
+
+                                <div class="invalid-feedback">
+                                    Enter your company name.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="setup-admin">
+                                    Admin full name
+                                </label>
+
+                                <input
+                                    class="form-control"
+                                    id="setup-admin"
+                                    required
+                                    maxlength="100"
+                                    autocomplete="name"
+                                    placeholder="Full name"
+                                >
+
+                                <div class="invalid-feedback">
+                                    Enter the administrator's name.
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="form-label" for="setup-email">
+                                    Admin email
+                                </label>
+
+                                <input
+                                    class="form-control"
+                                    id="setup-email"
+                                    type="email"
+                                    required
+                                    autocomplete="email"
+                                    placeholder="admin@company.com"
+                                >
+
+                                <div class="invalid-feedback">
+                                    Enter a valid email address.
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                data-bs-dismiss="modal"
+                            >
+                                Cancel
+                            </button>
+
+                            <button class="btn btn-primary" type="submit">
+                                <i
+                                    class="bi bi-building-check me-1"
+                                    aria-hidden="true"
+                                ></i>
+                                Create workspace
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

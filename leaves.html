@@ -1,0 +1,867 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Nexora HCM Lite HR workspace">
+
+        <title>Leave Management | Nexora HCM Lite</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        >
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        >
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+            rel="stylesheet"
+        >
+
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+
+    <body class="dashboard-page leaves-page">
+        <div class="app-shell">
+            <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+            <aside
+                class="app-sidebar"
+                id="main-navigation"
+                aria-label="Main navigation"
+            >
+                <a href="admin.html" class="sidebar-brand">
+                    <span class="sidebar-brand__mark">N</span>
+
+                    <span class="sidebar-brand__text">
+                        <span class="sidebar-brand__name">Nexora</span>
+                        <span class="sidebar-brand__tagline">
+                            HCM Lite · HR Solutions
+                        </span>
+                    </span>
+                </a>
+
+                <div class="sidebar-workspace">
+                    <span class="sidebar-workspace__label">WORKSPACE</span>
+                    <strong data-company-name>Nexora HR Solutions</strong>
+                </div>
+
+                <nav class="sidebar-section">
+                    <div class="sidebar-section__label">Workspace</div>
+
+                    <ul class="sidebar-nav">
+                        <li>
+                            <a href="admin.html" class="sidebar-nav__link">
+                                <i class="bi bi-grid-1x2"></i>
+                                <span class="sidebar-nav__text">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employees.html" class="sidebar-nav__link">
+                                <i class="bi bi-people"></i>
+                                <span class="sidebar-nav__text">Employees</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="leaves.html"
+                                class="sidebar-nav__link active"
+                                aria-current="page"
+                            >
+                                <i class="bi bi-calendar2-check"></i>
+                                <span class="sidebar-nav__text">Leave Management</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="payship.html" class="sidebar-nav__link">
+                                <i class="bi bi-wallet2"></i>
+                                <span class="sidebar-nav__text">Payslips</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employee.html" class="sidebar-nav__link">
+                                <i class="bi bi-person-badge"></i>
+                                <span class="sidebar-nav__text">Employee Portal</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="setting.html" class="sidebar-nav__link">
+                                <i class="bi bi-gear"></i>
+                                <span class="sidebar-nav__text">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-bottom-profile">
+                    <span class="avatar">AD</span>
+
+                    <span>
+                        <strong data-admin-name>Admin User</strong>
+                        <small>Administrator · Demo</small>
+                    </span>
+
+                    <a
+                        href="index.html"
+                        aria-label="Sign out"
+                        title="Sign out"
+                    >
+                        <i class="bi bi-box-arrow-right"></i>
+                    </a>
+                </div>
+
+                <footer class="sidebar-footer">
+                    <div class="sidebar-footer__caption">
+                        People · Performance · Progress
+                    </div>
+                </footer>
+            </aside>
+
+            <main class="app-main">
+                <header class="app-topbar">
+                    <div class="topbar__left">
+                        <button
+                            class="btn-icon"
+                            type="button"
+                            data-sidebar-toggle
+                            aria-label="Toggle navigation"
+                            aria-controls="main-navigation"
+                            aria-expanded="false"
+                        >
+                            <i class="bi bi-list fs-5"></i>
+                        </button>
+
+                        <div>
+                            <div class="topbar-context">Nexora / Workspace</div>
+                            <div class="fw-semibold" data-page-context>
+                                Leave Management
+                            </div>
+                        </div>
+                    </div>
+
+                    <form
+                        class="topbar-global-search"
+                        data-global-search
+                        role="search"
+                    >
+                        <i class="bi bi-search" aria-hidden="true"></i>
+
+                        <input
+                            type="search"
+                            name="q"
+                            aria-label="Search employees"
+                            placeholder="Search employees or ID"
+                            maxlength="120"
+                        >
+
+                        <button type="submit" aria-label="Submit search">
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                    <div class="topbar__right">
+                        <div
+                            class="dashboard-date d-none d-md-block"
+                            data-current-date
+                        ></div>
+
+                        <button
+                            class="btn-icon notification-button"
+                            type="button"
+                            aria-label="Notifications"
+                            title="Demo notifications"
+                        >
+                            <i class="bi bi-bell"></i>
+                        </button>
+
+                        <div class="topbar__divider"></div>
+
+                        <div class="profile-menu" data-profile-menu>
+                            <span class="avatar">AD</span>
+
+                            <span class="profile-menu__details">
+                                <span class="profile-menu__name" data-admin-name>
+                                    Admin User
+                                </span>
+
+                                <span class="profile-menu__role">
+                                    Administrator
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="page-container">
+                    <!-- Page Header -->
+                    <section class="module-page-header">
+                        <div>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="admin.html">Dashboard</a>
+                                    </li>
+
+                                    <li
+                                        class="breadcrumb-item active"
+                                        aria-current="page"
+                                    >
+                                        Leave Management
+                                    </li>
+                                </ol>
+                            </nav>
+
+                            <h1 class="page-title">Leave Management</h1>
+
+                            <p class="page-subtitle">
+                                Review employee requests, make decisions,
+                                and keep leave records in sync.
+                            </p>
+                        </div>
+
+                        <div class="module-header-actions">
+                            <button
+                                class="btn btn-primary"
+                                id="open-add-leave"
+                                type="button"
+                            >
+                                <i class="bi bi-plus-lg me-1"></i>
+                                Add Leave
+                            </button>
+
+                            <button
+                                class="btn btn-outline-primary"
+                                id="leave-export"
+                            >
+                                <i class="bi bi-download me-1"></i>
+                                Export CSV
+                            </button>
+                        </div>
+                    </section>
+
+                    <div
+                        id="leave-alert"
+                        class="alert"
+                        role="status"
+                        hidden
+                    ></div>
+
+                    <!-- Leave Summary -->
+                    <section
+                        class="employee-summary-grid leave-summary-grid"
+                        aria-label="Leave request summary"
+                    >
+                        <article class="employee-summary-card">
+                            <span
+                                class="employee-summary-card__icon employee-summary-card__icon--blue"
+                            >
+                                <i class="bi bi-inbox"></i>
+                            </span>
+
+                            <div>
+                                <span>Total requests</span>
+                                <strong id="leave-total">0</strong>
+                                <small>All saved requests</small>
+                            </div>
+                        </article>
+
+                        <article class="employee-summary-card">
+                            <span
+                                class="employee-summary-card__icon employee-summary-card__icon--amber"
+                            >
+                                <i class="bi bi-hourglass-split"></i>
+                            </span>
+
+                            <div>
+                                <span>Pending</span>
+                                <strong id="leave-pending">0</strong>
+                                <small>Awaiting review</small>
+                            </div>
+                        </article>
+
+                        <article class="employee-summary-card">
+                            <span
+                                class="employee-summary-card__icon employee-summary-card__icon--green"
+                            >
+                                <i class="bi bi-check2-circle"></i>
+                            </span>
+
+                            <div>
+                                <span>Approved</span>
+                                <strong id="leave-approved">0</strong>
+                                <small>Reviewed requests</small>
+                            </div>
+                        </article>
+
+                        <article class="employee-summary-card">
+                            <span
+                                class="employee-summary-card__icon employee-summary-card__icon--violet"
+                            >
+                                <i class="bi bi-x-circle"></i>
+                            </span>
+
+                            <div>
+                                <span>Rejected</span>
+                                <strong id="leave-rejected">0</strong>
+                                <small>Not approved</small>
+                            </div>
+                        </article>
+                    </section>
+
+                    <!-- Leave Requests Directory -->
+                    <section class="app-card leave-directory-card">
+                        <div class="employee-toolbar">
+                            <div class="employee-toolbar__heading">
+                                <div>
+                                    <h2 class="section-title">
+                                        Leave requests
+                                    </h2>
+
+                                    <p class="section-subtitle">
+                                        Shared requests submitted from the
+                                        employee portal
+                                    </p>
+                                </div>
+
+                                <span
+                                    class="employee-result-count"
+                                    id="leave-result-count"
+                                >
+                                    0 requests
+                                </span>
+                            </div>
+
+                            <!-- Leave Filters -->
+                            <div class="leave-filters">
+                                <label class="employee-search">
+                                    <i
+                                        class="bi bi-search"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <input
+                                        class="form-control"
+                                        id="leave-search"
+                                        type="search"
+                                        placeholder="Search employee, ID, type or reason"
+                                        aria-label="Search leave requests"
+                                    >
+                                </label>
+
+                                <select
+                                    id="leave-status-filter"
+                                    class="form-select"
+                                    aria-label="Filter by status"
+                                >
+                                    <option value="">All statuses</option>
+                                    <option>Pending</option>
+                                    <option>Approved</option>
+                                    <option>Rejected</option>
+                                </select>
+
+                                <select
+                                    id="leave-type-filter"
+                                    class="form-select"
+                                    aria-label="Filter by leave type"
+                                >
+                                    <option value="">All leave types</option>
+                                    <option>Annual Leave</option>
+                                    <option>Sick Leave</option>
+                                    <option>Casual Leave</option>
+                                    <option>Unpaid Leave</option>
+                                </select>
+
+                                <select
+                                    id="leave-department-filter"
+                                    class="form-select"
+                                    aria-label="Filter by department"
+                                >
+                                    <option value="">All departments</option>
+                                </select>
+
+                                <button
+                                    class="btn employee-clear-filters"
+                                    id="leave-clear-filters"
+                                    type="button"
+                                >
+                                    Clear filters
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Leave Requests Table -->
+                        <div class="table-responsive">
+                            <table class="table employee-table leave-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Employee</th>
+                                        <th>Leave type</th>
+                                        <th>Start date</th>
+                                        <th>End date</th>
+                                        <th>Days</th>
+                                        <th>Requested</th>
+                                        <th>Reason</th>
+                                        <th>Status</th>
+                                        <th class="text-end">Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="leave-table-body">
+                                    <tr>
+                                        <td colspan="9">
+                                            <div class="employee-empty-state">
+                                                <span
+                                                    class="employee-empty-state__icon"
+                                                >
+                                                    <i
+                                                        class="bi bi-calendar2-check"
+                                                    ></i>
+                                                </span>
+
+                                                <h3>No leave requests yet</h3>
+
+                                                <p>
+                                                    Requests submitted through
+                                                    the Employee Portal will
+                                                    appear here.
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="employee-table-footer">
+                            <span id="leave-table-summary">
+                                Showing 0 requests
+                            </span>
+
+                            <span>
+                                <i class="bi bi-shield-check me-1"></i>
+                                Local demo records
+                            </span>
+                        </div>
+                    </section>
+
+                    <!-- Add Leave Modal -->
+                    <div
+                        class="modal fade employee-modal"
+                        id="leave-form-modal"
+                        tabindex="-1"
+                        aria-labelledby="leave-form-title"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <form id="leave-form" novalidate>
+                                    <div class="modal-header">
+                                        <div>
+                                            <h2
+                                                class="modal-title fs-5"
+                                                id="leave-form-title"
+                                            >
+                                                Add leave request
+                                            </h2>
+
+                                            <p class="section-subtitle mb-0">
+                                                Create a leave entry for an
+                                                employee record.
+                                            </p>
+                                        </div>
+
+                                        <button
+                                            class="btn-close"
+                                            type="button"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"
+                                        ></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div
+                                            id="leave-form-feedback"
+                                            class="alert alert-danger"
+                                            hidden
+                                        ></div>
+
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <label
+                                                    class="form-label"
+                                                    for="leave-employee-select"
+                                                >
+                                                    Employee
+                                                </label>
+
+                                                <select
+                                                    id="leave-employee-select"
+                                                    class="form-select"
+                                                    required
+                                                >
+                                                    <option value="">
+                                                        Choose employee
+                                                    </option>
+                                                </select>
+
+                                                <div class="invalid-feedback">
+                                                    Select an employee.
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label
+                                                    class="form-label"
+                                                    for="leave-form-type"
+                                                >
+                                                    Leave type
+                                                </label>
+
+                                                <select
+                                                    id="leave-form-type"
+                                                    class="form-select"
+                                                    required
+                                                >
+                                                    <option value="">
+                                                        Choose leave type
+                                                    </option>
+
+                                                    <option>Annual Leave</option>
+                                                    <option>Sick Leave</option>
+                                                    <option>Casual Leave</option>
+                                                    <option>Unpaid Leave</option>
+                                                </select>
+
+                                                <div class="invalid-feedback">
+                                                    Choose a leave type.
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label
+                                                    class="form-label"
+                                                    for="leave-form-status"
+                                                >
+                                                    Status
+                                                </label>
+
+                                                <select
+                                                    id="leave-form-status"
+                                                    class="form-select"
+                                                    required
+                                                >
+                                                    <option value="Pending">
+                                                        Pending
+                                                    </option>
+
+                                                    <option value="Approved">
+                                                        Approved
+                                                    </option>
+
+                                                    <option value="Rejected">
+                                                        Rejected
+                                                    </option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label
+                                                    class="form-label"
+                                                    for="leave-form-start"
+                                                >
+                                                    Start date
+                                                </label>
+
+                                                <input
+                                                    id="leave-form-start"
+                                                    type="date"
+                                                    class="form-control"
+                                                    required
+                                                >
+
+                                                <div class="invalid-feedback">
+                                                    Choose a valid start date.
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label
+                                                    class="form-label"
+                                                    for="leave-form-end"
+                                                >
+                                                    End date
+                                                </label>
+
+                                                <input
+                                                    id="leave-form-end"
+                                                    type="date"
+                                                    class="form-control"
+                                                    required
+                                                >
+
+                                                <div class="invalid-feedback">
+                                                    End date must be on or
+                                                    after the start date.
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label
+                                                    class="form-label"
+                                                    for="leave-form-reason"
+                                                >
+                                                    Reason
+                                                </label>
+
+                                                <textarea
+                                                    id="leave-form-reason"
+                                                    class="form-control"
+                                                    rows="3"
+                                                    minlength="8"
+                                                    maxlength="1000"
+                                                    required
+                                                    placeholder="Briefly explain the leave request"
+                                                ></textarea>
+
+                                                <div class="invalid-feedback">
+                                                    Please provide a reason of
+                                                    at least 8 characters.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button
+                                            class="btn btn-light"
+                                            type="button"
+                                            data-bs-dismiss="modal"
+                                        >
+                                            Cancel
+                                        </button>
+
+                                        <button
+                                            class="btn btn-primary"
+                                            id="leave-form-submit"
+                                            type="submit"
+                                        >
+                                            Add leave
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leave Details Modal -->
+                    <div
+                        class="modal fade employee-modal"
+                        id="leave-detail-modal"
+                        tabindex="-1"
+                        aria-labelledby="leave-detail-title"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div>
+                                        <h2
+                                            class="modal-title fs-5"
+                                            id="leave-detail-title"
+                                        >
+                                            Leave request details
+                                        </h2>
+
+                                        <p class="section-subtitle mb-0">
+                                            Review the request before making
+                                            a decision.
+                                        </p>
+                                    </div>
+
+                                    <button
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div
+                                        id="leave-detail-content"
+                                        class="leave-detail-grid"
+                                    ></div>
+
+                                    <div
+                                        id="leave-review-note"
+                                        class="small text-muted mt-3"
+                                    ></div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button
+                                        class="btn btn-light"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Close
+                                    </button>
+
+                                    <button
+                                        class="btn btn-outline-danger"
+                                        id="leave-detail-reject"
+                                        type="button"
+                                    >
+                                        Reject
+                                    </button>
+
+                                    <button
+                                        class="btn btn-primary"
+                                        id="leave-detail-approve"
+                                        type="button"
+                                    >
+                                        Approve request
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Confirm Decision Modal -->
+                    <div
+                        class="modal fade employee-modal"
+                        id="leave-confirm-modal"
+                        tabindex="-1"
+                        aria-labelledby="leave-confirm-title"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2
+                                        class="modal-title fs-5"
+                                        id="leave-confirm-title"
+                                    >
+                                        Confirm decision
+                                    </h2>
+
+                                    <button
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p
+                                        id="leave-confirm-message"
+                                        class="mb-3"
+                                    >
+                                        Are you sure?
+                                    </p>
+
+                                    <label
+                                        class="form-label"
+                                        for="leave-rejection-reason"
+                                    >
+                                        Rejection reason
+                                        <span class="text-muted fw-normal">
+                                            (optional)
+                                        </span>
+                                    </label>
+
+                                    <textarea
+                                        id="leave-rejection-reason"
+                                        class="form-control"
+                                        rows="3"
+                                        maxlength="500"
+                                        placeholder="Add a note for the employee, if helpful"
+                                    ></textarea>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button
+                                        class="btn btn-light"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Cancel
+                                    </button>
+
+                                    <button
+                                        class="btn btn-primary"
+                                        id="leave-confirm-action"
+                                        type="button"
+                                    >
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page Footer -->
+                    <footer class="dashboard-footer">
+                        HCM Lite
+                        <span>·</span>
+                        People • Performance • Progress
+
+                        <span class="ms-auto">
+                            Demo workspace · Data stays in this browser
+                        </span>
+                    </footer>
+                </div>
+            </main>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div
+            class="toast-container position-fixed bottom-0 end-0 p-3"
+            style="z-index: 1090"
+        >
+            <div
+                id="global-toast"
+                class="toast employee-toast"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+            >
+                <div class="toast-header">
+                    <i class="bi bi-check-circle toast-status-icon"></i>
+
+                    <strong class="me-auto" id="global-toast-title">
+                        Updated
+                    </strong>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+
+                <div
+                    class="toast-body"
+                    id="global-toast-message"
+                ></div>
+            </div>
+        </div>
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Project JavaScript -->
+        <script src="js/script.js"></script>
+    </body>
+</html>

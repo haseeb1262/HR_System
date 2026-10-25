@@ -1,0 +1,481 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Nexora HCM Lite administrator dashboard">
+
+        <title>Dashboard | Nexora HCM Lite</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+
+    <body class="dashboard-page">
+        <div class="app-shell">
+            <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+            <aside class="app-sidebar" id="main-navigation" aria-label="Main navigation">
+                <a href="admin.html" class="sidebar-brand">
+                    <span class="sidebar-brand__mark">N</span>
+
+                    <span class="sidebar-brand__text">
+                        <span class="sidebar-brand__name">Nexora</span>
+                        <span class="sidebar-brand__tagline">HCM Lite · HR Solutions</span>
+                    </span>
+                </a>
+
+                <div class="sidebar-workspace">
+                    <span class="sidebar-workspace__label">WORKSPACE</span>
+                    <strong data-company-name>Nexora HR Solutions</strong>
+                </div>
+
+                <nav class="sidebar-section">
+                    <div class="sidebar-section__label">Overview</div>
+
+                    <ul class="sidebar-nav">
+                        <li>
+                            <a href="admin.html" class="sidebar-nav__link active" aria-current="page">
+                                <i class="bi bi-grid-1x2"></i>
+                                <span class="sidebar-nav__text">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employees.html" class="sidebar-nav__link">
+                                <i class="bi bi-people"></i>
+                                <span class="sidebar-nav__text">Employees</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="attendance.html" class="sidebar-nav__link">
+                                <i class="bi bi-calendar-check"></i>
+                                <span class="sidebar-nav__text">Attendance</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="leaves.html" class="sidebar-nav__link">
+                                <i class="bi bi-calendar2-check"></i>
+                                <span class="sidebar-nav__text">Leave Management</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="payship.html" class="sidebar-nav__link">
+                                <i class="bi bi-wallet2"></i>
+                                <span class="sidebar-nav__text">Payslips</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employee.html" class="sidebar-nav__link">
+                                <i class="bi bi-person-badge"></i>
+                                <span class="sidebar-nav__text">Employee Portal</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="setting.html" class="sidebar-nav__link">
+                                <i class="bi bi-gear"></i>
+                                <span class="sidebar-nav__text">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-bottom-profile">
+                    <span class="avatar">AD</span>
+
+                    <span>
+                        <strong data-admin-name>Admin User</strong>
+                        <small>Administrator</small>
+                    </span>
+
+                    <a href="index.html" aria-label="Log out" title="Log out">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </a>
+                </div>
+
+                <footer class="sidebar-footer">
+                    <div class="sidebar-footer__caption">
+                        People · Performance · Progress
+                    </div>
+                </footer>
+            </aside>
+
+            <main class="app-main">
+                <header class="app-topbar">
+                    <div class="topbar__left">
+                        <button
+                            class="btn-icon"
+                            type="button"
+                            data-sidebar-toggle
+                            aria-label="Toggle navigation"
+                            aria-controls="main-navigation"
+                            aria-expanded="false"
+                        >
+                            <i class="bi bi-list fs-5"></i>
+                        </button>
+
+                        <div>
+                            <div class="topbar-context">Workspace / Overview</div>
+                            <div class="fw-semibold">Dashboard</div>
+                        </div>
+                    </div>
+
+                    <form class="topbar-global-search" data-global-search role="search">
+                        <i class="bi bi-search" aria-hidden="true"></i>
+
+                        <input
+                            type="search"
+                            name="q"
+                            aria-label="Search employees"
+                            placeholder="Search employees or ID"
+                            maxlength="120"
+                        >
+
+                        <button type="submit" aria-label="Submit search">
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                    <div class="topbar__right">
+                        <div class="dashboard-date d-none d-md-block" data-current-date></div>
+
+                        <button
+                            class="btn-icon notification-button"
+                            type="button"
+                            aria-label="Notifications"
+                            title="No new notifications"
+                        >
+                            <i class="bi bi-bell"></i>
+                        </button>
+
+                        <div class="topbar__divider"></div>
+
+                        <button class="profile-menu" data-profile-menu type="button">
+                            <span class="avatar">AD</span>
+
+                            <span class="profile-menu__details">
+                                <span class="profile-menu__name" data-admin-name>
+                                    Admin User
+                                </span>
+                                <span class="profile-menu__role">Administrator</span>
+                            </span>
+                        </button>
+                    </div>
+                </header>
+
+                <div class="page-container">
+                    <section class="dashboard-welcome">
+                        <div>
+                            <span class="dashboard-eyebrow">
+                                <span></span>
+                                YOUR WORKSPACE AT A GLANCE
+                            </span>
+
+                            <h1 class="page-title" id="dashboard-greeting">
+                                Good day, Admin
+                            </h1>
+
+                            <p class="page-subtitle">
+                                Here’s your workforce overview. A clear view of people and operations starts here.
+                            </p>
+
+                            <div class="dashboard-welcome__date">
+                                <i class="bi bi-calendar3"></i>
+                                <span data-current-date></span>
+                            </div>
+                        </div>
+
+                        <div class="page-header__actions">
+                            <a class="btn btn-outline-primary" href="leaves.html">
+                                <i class="bi bi-calendar2-check me-1"></i>
+                                Review leave
+                            </a>
+
+                            <a class="btn btn-primary" href="employees.html">
+                                <i class="bi bi-plus-lg me-1"></i>
+                                Add employee
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="kpi-grid dashboard-kpis" aria-label="Workforce summary">
+                        <article class="kpi-card">
+                            <div class="kpi-card__top">
+                                <span class="kpi-card__label">Total employees</span>
+                                <span class="kpi-card__icon">
+                                    <i class="bi bi-people"></i>
+                                </span>
+                            </div>
+
+                            <strong class="kpi-card__value" id="dash-total-employees">0</strong>
+
+                            <div class="kpi-card__meta">
+                                Employee records in your directory
+                            </div>
+                        </article>
+
+                        <article class="kpi-card">
+                            <div class="kpi-card__top">
+                                <span class="kpi-card__label">Present today</span>
+                                <span class="kpi-card__icon kpi-icon--green">
+                                    <i class="bi bi-person-check"></i>
+                                </span>
+                            </div>
+
+                            <strong class="kpi-card__value" id="dash-present">0</strong>
+
+                            <div class="kpi-card__meta">
+                                From saved attendance records
+                            </div>
+                        </article>
+
+                        <article class="kpi-card">
+                            <div class="kpi-card__top">
+                                <span class="kpi-card__label">On leave</span>
+                                <span class="kpi-card__icon kpi-icon--amber">
+                                    <i class="bi bi-calendar2-week"></i>
+                                </span>
+                            </div>
+
+                            <strong class="kpi-card__value" id="dash-on-leave">0</strong>
+
+                            <div class="kpi-card__meta">
+                                Employees currently on leave
+                            </div>
+                        </article>
+
+                        <article class="kpi-card kpi-card--rose-gradient">
+                            <div class="kpi-card__top">
+                                <span class="kpi-card__label">Pending requests</span>
+                                <span class="kpi-card__icon kpi-icon--violet">
+                                    <i class="bi bi-inbox"></i>
+                                </span>
+                            </div>
+
+                            <strong class="kpi-card__value" id="dash-pending">0</strong>
+
+                            <div class="kpi-card__meta">
+                                Leave requests awaiting review
+                            </div>
+                        </article>
+                    </section>
+
+                    <div class="dashboard-content-grid">
+                        <section class="app-card attendance-card">
+                            <div class="app-card__header">
+                                <div>
+                                    <h2 class="section-title">Attendance overview</h2>
+                                    <p class="section-subtitle">A quick snapshot of today</p>
+                                </div>
+
+                                <span class="subtle-pill">Today</span>
+                            </div>
+
+                            <div class="app-card__body">
+                                <div class="attendance-summary">
+                                    <div>
+                                        <span class="attendance-summary__number" id="attendance-rate">—</span>
+                                        <span class="attendance-summary__label">Present today</span>
+                                    </div>
+
+                                    <div class="attendance-ring" aria-hidden="true">
+                                        <div class="attendance-ring__inner">
+                                            <i class="bi bi-people"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="attendance-legend">
+                                    <span>
+                                        <i class="legend-dot legend-dot--present"></i>
+                                        Present
+                                        <b id="attendance-present-count">0</b>
+                                    </span>
+
+                                    <span>
+                                        <i class="legend-dot legend-dot--absent"></i>
+                                        Absent
+                                        <b id="attendance-absent-count">0</b>
+                                    </span>
+
+                                    <span>
+                                        <i class="legend-dot legend-dot--late"></i>
+                                        Late
+                                        <b id="attendance-late-count">0</b>
+                                    </span>
+
+                                    <span>
+                                        <i class="legend-dot legend-dot--leave"></i>
+                                        On leave
+                                        <b id="attendance-leave-count">0</b>
+                                    </span>
+                                </div>
+
+                                <div id="attendance-empty" class="dashboard-empty dashboard-empty--compact">
+                                    <i class="bi bi-bar-chart-line"></i>
+                                    <p>No attendance records yet.</p>
+                                    <span>
+                                        When attendance is saved, this overview will update.
+                                    </span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="app-card">
+                            <div class="app-card__header">
+                                <div>
+                                    <h2 class="section-title">Team checklist</h2>
+                                    <p class="section-subtitle">Quick actions for the day</p>
+                                </div>
+                            </div>
+
+                            <div class="app-card__body">
+                                <ul id="smart-helper-list" class="helper-list">
+                                    <li>
+                                        <i class="bi bi-check-circle"></i>
+                                        <span>
+                                            Add employee records to start building your directory.
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        <i class="bi bi-calendar-check"></i>
+                                        <span>
+                                            Review leave requests as they arrive.
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        <i class="bi bi-clipboard-check"></i>
+                                        <span>
+                                            Mark attendance to complete today’s overview.
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="dashboard-lower-grid">
+                        <section class="app-card">
+                            <div class="app-card__header">
+                                <div>
+                                    <h2 class="section-title">Recent leave requests</h2>
+                                    <p class="section-subtitle">
+                                        Latest requests saved in this demo
+                                    </p>
+                                </div>
+
+                                <a class="text-link" href="leaves.html">
+                                    View all
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </a>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table dashboard-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Employee</th>
+                                            <th>Leave type</th>
+                                            <th>Dates</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="dashboard-leaves">
+                                        <tr>
+                                            <td colspan="4">
+                                                <div class="dashboard-empty">
+                                                    <i class="bi bi-calendar2-check"></i>
+                                                    <p>No leave requests yet</p>
+                                                    <span>
+                                                        Saved leave requests will appear here.
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <section class="app-card">
+                            <div class="app-card__header">
+                                <div>
+                                    <h2 class="section-title">Recent employees</h2>
+                                    <p class="section-subtitle">
+                                        Latest people added to your directory
+                                    </p>
+                                </div>
+
+                                <a class="text-link" href="employees.html">
+                                    View all
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </a>
+                            </div>
+
+                            <div class="app-card__body dashboard-employee-list" id="dashboard-employees">
+                                <div class="dashboard-empty">
+                                    <i class="bi bi-people"></i>
+                                    <p>No employee records yet</p>
+                                    <span>Add an employee to get started.</span>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <section class="dashboard-activity app-card">
+                        <div class="app-card__header">
+                            <div>
+                                <h2 class="section-title">Workspace activity</h2>
+                                <p class="section-subtitle">
+                                    Helpful updates from this browser session
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="app-card__body" id="dashboard-activity">
+                            <div class="activity-row">
+                                <span class="activity-icon">
+                                    <i class="bi bi-check2-circle"></i>
+                                </span>
+
+                                <span>
+                                    <strong>Workspace ready</strong>
+                                    <small>Your HCM Lite demo is ready to use.</small>
+                                </span>
+
+                                <time>Now</time>
+                            </div>
+                        </div>
+                    </section>
+
+                    <footer class="dashboard-footer">
+                        HCM Lite
+                        <span>·</span>
+                        People • Performance • Progress
+                        <span class="ms-auto">
+                            Demo workspace · Data stays in this browser
+                        </span>
+                    </footer>
+                </div>
+            </main>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

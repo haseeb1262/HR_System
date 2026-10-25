@@ -1,0 +1,704 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Manage employee records in Nexora HCM Lite">
+
+        <title>Employees | Nexora HCM Lite</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+
+    <body class="dashboard-page employees-page">
+        <div class="app-shell">
+            <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+            <aside class="app-sidebar" id="main-navigation" aria-label="Main navigation">
+                <a href="admin.html" class="sidebar-brand">
+                    <span class="sidebar-brand__mark">N</span>
+                    <span class="sidebar-brand__text">
+                        <span class="sidebar-brand__name">Nexora</span>
+                        <span class="sidebar-brand__tagline">HCM Lite · HR Solutions</span>
+                    </span>
+                </a>
+
+                <div class="sidebar-workspace">
+                    <span class="sidebar-workspace__label">WORKSPACE</span>
+                    <strong data-company-name>Nexora HR Solutions</strong>
+                </div>
+
+                <nav class="sidebar-section">
+                    <div class="sidebar-section__label">Overview</div>
+
+                    <ul class="sidebar-nav">
+                        <li>
+                            <a href="admin.html" class="sidebar-nav__link">
+                                <i class="bi bi-grid-1x2"></i>
+                                <span class="sidebar-nav__text">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employees.html" class="sidebar-nav__link active" aria-current="page">
+                                <i class="bi bi-people"></i>
+                                <span class="sidebar-nav__text">Employees</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="leaves.html" class="sidebar-nav__link">
+                                <i class="bi bi-calendar2-check"></i>
+                                <span class="sidebar-nav__text">Leave Management</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="payship.html" class="sidebar-nav__link">
+                                <i class="bi bi-wallet2"></i>
+                                <span class="sidebar-nav__text">Payslips</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employee.html" class="sidebar-nav__link">
+                                <i class="bi bi-person-badge"></i>
+                                <span class="sidebar-nav__text">Employee Portal</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="setting.html" class="sidebar-nav__link">
+                                <i class="bi bi-gear"></i>
+                                <span class="sidebar-nav__text">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-bottom-profile">
+                    <span class="avatar">AD</span>
+                    <span>
+                        <strong data-admin-name>Admin User</strong>
+                        <small>Administrator</small>
+                    </span>
+                    <a href="index.html" aria-label="Log out" title="Log out">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </a>
+                </div>
+
+                <footer class="sidebar-footer">
+                    <div class="sidebar-footer__caption">
+                        People · Performance · Progress
+                    </div>
+                </footer>
+            </aside>
+
+            <main class="app-main">
+                <header class="app-topbar">
+                    <div class="topbar__left">
+                        <button
+                            class="btn-icon"
+                            type="button"
+                            data-sidebar-toggle
+                            aria-label="Toggle navigation"
+                            aria-controls="main-navigation"
+                            aria-expanded="false"
+                        >
+                            <i class="bi bi-list fs-5"></i>
+                        </button>
+
+                        <div>
+                            <div class="topbar-context">Dashboard / Employees</div>
+                            <div class="fw-semibold">Employee directory</div>
+                        </div>
+                    </div>
+
+                    <form class="topbar-global-search" data-global-search role="search">
+                        <i class="bi bi-search" aria-hidden="true"></i>
+                        <input
+                            type="search"
+                            name="q"
+                            aria-label="Search employees"
+                            placeholder="Search employees or ID"
+                            maxlength="120"
+                        >
+                        <button type="submit" aria-label="Submit search">
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                    <div class="topbar__right">
+                        <div class="dashboard-date d-none d-md-block" data-current-date></div>
+
+                        <button
+                            class="btn-icon notification-button"
+                            type="button"
+                            aria-label="Notifications"
+                            title="Notifications"
+                        >
+                            <i class="bi bi-bell"></i>
+                        </button>
+
+                        <div class="topbar__divider"></div>
+
+                        <button class="profile-menu" data-profile-menu type="button">
+                            <span class="avatar">AD</span>
+                            <span class="profile-menu__details">
+                                <span class="profile-menu__name" data-admin-name>Admin User</span>
+                                <span class="profile-menu__role">Administrator</span>
+                            </span>
+                        </button>
+                    </div>
+                </header>
+
+                <div class="page-container">
+                    <section class="page-header employee-page-header">
+                        <div class="page-header__main">
+                            <div class="breadcrumb">
+                                <a href="admin.html">Dashboard</a>
+                                <span>/</span>
+                                <span aria-current="page">Employees</span>
+                            </div>
+
+                            <h1 class="page-title">Employee Management</h1>
+
+                            <p class="page-subtitle">
+                                Manage employee records, departments, and employment status in one place.
+                            </p>
+                        </div>
+
+                        <div class="page-header__actions">
+                            <button class="btn btn-outline-primary" type="button" id="refresh-employees">
+                                <i class="bi bi-arrow-clockwise me-1"></i>
+                                Refresh list
+                            </button>
+
+                            <button class="btn btn-primary" type="button" id="open-add-employee">
+                                <i class="bi bi-plus-lg me-1"></i>
+                                Add Employee
+                            </button>
+                        </div>
+                    </section>
+
+                    <div
+                        id="employee-alert"
+                        class="alert employee-alert"
+                        role="status"
+                        aria-live="polite"
+                        hidden
+                    ></div>
+
+                    <section class="employee-summary-grid" aria-label="Employee summary">
+                        <article class="employee-summary-card">
+                            <div class="employee-summary-card__icon employee-summary-card__icon--blue">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <div>
+                                <span>Total employees</span>
+                                <strong id="employee-total">0</strong>
+                                <small>All directory records</small>
+                            </div>
+                        </article>
+
+                        <article class="employee-summary-card">
+                            <div class="employee-summary-card__icon employee-summary-card__icon--green">
+                                <i class="bi bi-person-check"></i>
+                            </div>
+                            <div>
+                                <span>Active employees</span>
+                                <strong id="employee-active">0</strong>
+                                <small>Currently active</small>
+                            </div>
+                        </article>
+
+                        <article class="employee-summary-card">
+                            <div class="employee-summary-card__icon employee-summary-card__icon--amber">
+                                <i class="bi bi-calendar2-week"></i>
+                            </div>
+                            <div>
+                                <span>On leave</span>
+                                <strong id="employee-on-leave">0</strong>
+                                <small>Marked as on leave</small>
+                            </div>
+                        </article>
+
+                        <article class="employee-summary-card">
+                            <div class="employee-summary-card__icon employee-summary-card__icon--violet">
+                                <i class="bi bi-diagram-3"></i>
+                            </div>
+                            <div>
+                                <span>Departments</span>
+                                <strong id="employee-departments">0</strong>
+                                <small>Distinct departments</small>
+                            </div>
+                        </article>
+                    </section>
+
+                    <section class="app-card employee-directory-card">
+                        <div class="employee-toolbar">
+                            <div class="employee-toolbar__heading">
+                                <div>
+                                    <h2 class="section-title">Employee directory</h2>
+                                    <p class="section-subtitle">
+                                        Search, review, and maintain your people records.
+                                    </p>
+                                </div>
+
+                                <span class="employee-result-count" id="employee-result-count">
+                                    0 employees
+                                </span>
+                            </div>
+
+                            <div class="employee-filters">
+                                <div class="employee-search">
+                                    <i class="bi bi-search" aria-hidden="true"></i>
+                                    <label class="visually-hidden" for="employee-search">
+                                        Search employees
+                                    </label>
+                                    <input
+                                        type="search"
+                                        class="form-control"
+                                        id="employee-search"
+                                        placeholder="Search name, ID, email, role…"
+                                    >
+                                </div>
+
+                                <div>
+                                    <label class="visually-hidden" for="employee-department-filter">
+                                        Filter by department
+                                    </label>
+                                    <select class="form-select" id="employee-department-filter">
+                                        <option value="">All departments</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="visually-hidden" for="employee-status-filter">
+                                        Filter by status
+                                    </label>
+                                    <select class="form-select" id="employee-status-filter">
+                                        <option value="">All statuses</option>
+                                        <option>Active</option>
+                                        <option>On Leave</option>
+                                        <option>Inactive</option>
+                                    </select>
+                                </div>
+
+                                <button
+                                    class="btn btn-light employee-clear-filters"
+                                    id="clear-employee-filters"
+                                    type="button"
+                                >
+                                    Clear filters
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive employee-table-wrap">
+                            <table class="table employee-table align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Employee</th>
+                                        <th scope="col">Employee ID</th>
+                                        <th scope="col">Department</th>
+                                        <th scope="col">Job title</th>
+                                        <th scope="col">Joining date</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col" class="text-end">Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="employee-table-body">
+                                    <tr>
+                                        <td colspan="7">
+                                            <div class="employee-empty-state">
+                                                <span class="employee-empty-state__icon">
+                                                    <i class="bi bi-person-plus"></i>
+                                                </span>
+                                                <h3>Your directory starts here</h3>
+                                                <p>
+                                                    Add your first employee to build a central place for your people records.
+                                                </p>
+                                                <button
+                                                    class="btn btn-primary btn-sm"
+                                                    type="button"
+                                                    data-empty-add
+                                                >
+                                                    <i class="bi bi-plus-lg me-1"></i>
+                                                    Add first employee
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="employee-table-footer">
+                            <span id="employee-table-summary">Showing 0 employees</span>
+                            <span>
+                                <i class="bi bi-shield-check me-1"></i>
+                                Saved in this browser
+                            </span>
+                        </div>
+                    </section>
+
+                    <footer class="dashboard-footer">
+                        HCM Lite <span>·</span> People • Performance • Progress
+                        <span class="ms-auto">
+                            Employee records are stored locally in this browser.
+                        </span>
+                    </footer>
+                </div>
+            </main>
+        </div>
+
+        <div
+            class="modal fade"
+            id="employee-form-modal"
+            tabindex="-1"
+            aria-labelledby="employee-form-title"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content employee-modal">
+                    <div class="modal-header">
+                        <div>
+                            <span class="auth-form-kicker">PEOPLE DIRECTORY</span>
+                            <h2 class="modal-title fs-5 mt-1" id="employee-form-title">
+                                Add New Employee
+                            </h2>
+                            <p class="text-muted small mb-0 mt-1">
+                                Keep employee details accurate and up to date.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close employee form"
+                        ></button>
+                    </div>
+
+                    <form id="employee-form" novalidate>
+                        <div class="modal-body">
+                            <div
+                                id="employee-form-feedback"
+                                class="alert alert-danger py-2"
+                                role="alert"
+                                hidden
+                            ></div>
+
+                            <input type="hidden" id="employee-record-id">
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="employee-name" class="form-label">
+                                        Full name <span class="text-danger">*</span>
+                                    </label>
+                                    <input
+                                        class="form-control"
+                                        id="employee-name"
+                                        required
+                                        maxlength="120"
+                                        autocomplete="name"
+                                    >
+                                    <div class="invalid-feedback">
+                                        Enter the employee’s full name.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="employee-email" class="form-label">
+                                        Email address <span class="text-danger">*</span>
+                                    </label>
+                                    <input
+                                        class="form-control"
+                                        id="employee-email"
+                                        type="email"
+                                        required
+                                        maxlength="160"
+                                        autocomplete="email"
+                                    >
+                                    <div class="invalid-feedback">
+                                        Enter a valid email address.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="employee-phone" class="form-label">
+                                        Phone number
+                                    </label>
+                                    <input
+                                        class="form-control"
+                                        id="employee-phone"
+                                        type="tel"
+                                        maxlength="40"
+                                        autocomplete="tel"
+                                        placeholder="Optional"
+                                    >
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="employee-department" class="form-label">
+                                        Department <span class="text-danger">*</span>
+                                    </label>
+                                    <input
+                                        class="form-control"
+                                        id="employee-department"
+                                        list="employee-department-options"
+                                        required
+                                        maxlength="100"
+                                        placeholder="Choose or enter a department"
+                                    >
+
+                                    <datalist id="employee-department-options">
+                                        <option value="Human Resources">
+                                        <option value="Engineering">
+                                        <option value="Design">
+                                        <option value="Finance">
+                                        <option value="Marketing">
+                                        <option value="Operations">
+                                        <option value="Sales">
+                                    </datalist>
+
+                                    <div class="invalid-feedback">
+                                        Enter a department.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="employee-job-title" class="form-label">
+                                        Job title <span class="text-danger">*</span>
+                                    </label>
+                                    <input
+                                        class="form-control"
+                                        id="employee-job-title"
+                                        required
+                                        maxlength="120"
+                                        placeholder="e.g. People Operations Manager"
+                                    >
+                                    <div class="invalid-feedback">
+                                        Enter a job title.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="employee-joining-date" class="form-label">
+                                        Joining date <span class="text-danger">*</span>
+                                    </label>
+                                    <input
+                                        class="form-control"
+                                        id="employee-joining-date"
+                                        type="date"
+                                        required
+                                    >
+                                    <div class="invalid-feedback">
+                                        Choose a valid joining date.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="employee-status" class="form-label">
+                                        Employment status <span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-select" id="employee-status" required>
+                                        <option value="Active">Active</option>
+                                        <option value="On Leave">On Leave</option>
+                                        <option value="Inactive">Inactive</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Choose an employment status.
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="employee-notes" class="form-label">
+                                        Notes <span class="text-muted fw-normal">(optional)</span>
+                                    </label>
+                                    <textarea
+                                        class="form-control"
+                                        id="employee-notes"
+                                        rows="3"
+                                        maxlength="1000"
+                                        placeholder="Add any relevant notes"
+                                    ></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                data-bs-dismiss="modal"
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                class="btn btn-primary"
+                                id="employee-form-submit"
+                                type="submit"
+                            >
+                                <i class="bi bi-person-plus me-1"></i>
+                                Add Employee
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="modal fade"
+            id="employee-view-modal"
+            tabindex="-1"
+            aria-labelledby="employee-view-title"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content employee-modal">
+                    <div class="modal-header">
+                        <div>
+                            <span class="auth-form-kicker">EMPLOYEE PROFILE</span>
+                            <h2 class="modal-title fs-5 mt-1" id="employee-view-title">
+                                Employee details
+                            </h2>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close employee details"
+                        ></button>
+                    </div>
+
+                    <div class="modal-body" id="employee-view-content"></div>
+
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-light"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="employee-view-edit"
+                        >
+                            <i class="bi bi-pencil me-1"></i>
+                            Edit employee
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="modal fade"
+            id="employee-delete-modal"
+            tabindex="-1"
+            aria-labelledby="employee-delete-title"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content employee-modal">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5" id="employee-delete-title">
+                            Delete employee?
+                        </h2>
+
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close delete confirmation"
+                        ></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="delete-confirm-icon">
+                            <i class="bi bi-trash3"></i>
+                        </div>
+
+                        <p class="mb-2">
+                            You’re about to remove
+                            <strong id="employee-delete-name">this employee</strong>
+                            from the local demo directory.
+                        </p>
+
+                        <p class="text-muted small mb-0">
+                            This action cannot be undone from this screen. Related leave and attendance history is not automatically deleted.
+                        </p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-light"
+                            data-bs-dismiss="modal"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-danger"
+                            id="confirm-delete-employee"
+                        >
+                            Delete Employee
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div
+                id="employee-toast"
+                class="toast employee-toast"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+            >
+                <div class="toast-header">
+                    <span class="toast-status-icon">
+                        <i class="bi bi-check-circle-fill"></i>
+                    </span>
+
+                    <strong class="me-auto" id="employee-toast-title">Saved</strong>
+                    <small>Just now</small>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close notification"
+                    ></button>
+                </div>
+
+                <div class="toast-body" id="employee-toast-message">
+                    Employee record saved.
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

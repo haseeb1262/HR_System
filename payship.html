@@ -1,0 +1,644 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Nexora HCM Lite HR workspace">
+
+        <title>Payslip Management | Nexora HCM Lite</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        >
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        >
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+            rel="stylesheet"
+        >
+
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+
+    <body class="dashboard-page payslip-page">
+        <div class="app-shell">
+            <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+            <aside
+                class="app-sidebar"
+                id="main-navigation"
+                aria-label="Main navigation"
+            >
+                <a href="admin.html" class="sidebar-brand">
+                    <span class="sidebar-brand__mark">N</span>
+
+                    <span class="sidebar-brand__text">
+                        <span class="sidebar-brand__name">Nexora</span>
+                        <span class="sidebar-brand__tagline">
+                            HCM Lite · HR Solutions
+                        </span>
+                    </span>
+                </a>
+
+                <div class="sidebar-workspace">
+                    <span class="sidebar-workspace__label">WORKSPACE</span>
+                    <strong data-company-name>Nexora HR Solutions</strong>
+                </div>
+
+                <nav class="sidebar-section">
+                    <div class="sidebar-section__label">Workspace</div>
+
+                    <ul class="sidebar-nav">
+                        <li>
+                            <a href="admin.html" class="sidebar-nav__link">
+                                <i class="bi bi-grid-1x2"></i>
+                                <span class="sidebar-nav__text">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employees.html" class="sidebar-nav__link">
+                                <i class="bi bi-people"></i>
+                                <span class="sidebar-nav__text">Employees</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="leaves.html" class="sidebar-nav__link">
+                                <i class="bi bi-calendar2-check"></i>
+                                <span class="sidebar-nav__text">Leave Management</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="payship.html"
+                                class="sidebar-nav__link active"
+                                aria-current="page"
+                            >
+                                <i class="bi bi-wallet2"></i>
+                                <span class="sidebar-nav__text">Payslips</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employee.html" class="sidebar-nav__link">
+                                <i class="bi bi-person-badge"></i>
+                                <span class="sidebar-nav__text">Employee Portal</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="setting.html" class="sidebar-nav__link">
+                                <i class="bi bi-gear"></i>
+                                <span class="sidebar-nav__text">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-bottom-profile">
+                    <span class="avatar">AD</span>
+
+                    <span>
+                        <strong data-admin-name>Admin User</strong>
+                        <small>Administrator · Demo</small>
+                    </span>
+
+                    <a
+                        href="index.html"
+                        aria-label="Sign out"
+                        title="Sign out"
+                    >
+                        <i class="bi bi-box-arrow-right"></i>
+                    </a>
+                </div>
+
+                <footer class="sidebar-footer">
+                    <div class="sidebar-footer__caption">
+                        People · Performance · Progress
+                    </div>
+                </footer>
+            </aside>
+
+            <main class="app-main">
+                <header class="app-topbar">
+                    <div class="topbar__left">
+                        <button
+                            class="btn-icon"
+                            type="button"
+                            data-sidebar-toggle
+                            aria-label="Toggle navigation"
+                            aria-controls="main-navigation"
+                            aria-expanded="false"
+                        >
+                            <i class="bi bi-list fs-5"></i>
+                        </button>
+
+                        <div>
+                            <div class="topbar-context">Nexora / Workspace</div>
+                            <div class="fw-semibold" data-page-context>
+                                Payslip Management
+                            </div>
+                        </div>
+                    </div>
+
+                    <form
+                        class="topbar-global-search"
+                        data-global-search
+                        role="search"
+                    >
+                        <i class="bi bi-search" aria-hidden="true"></i>
+
+                        <input
+                            type="search"
+                            name="q"
+                            aria-label="Search employees"
+                            placeholder="Search employees or ID"
+                            maxlength="120"
+                        >
+
+                        <button type="submit" aria-label="Submit search">
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                    <div class="topbar__right">
+                        <div
+                            class="dashboard-date d-none d-md-block"
+                            data-current-date
+                        ></div>
+
+                        <button
+                            class="btn-icon notification-button"
+                            type="button"
+                            aria-label="Notifications"
+                            title="Demo notifications"
+                        >
+                            <i class="bi bi-bell"></i>
+                        </button>
+
+                        <div class="topbar__divider"></div>
+
+                        <div class="profile-menu" data-profile-menu>
+                            <span class="avatar">AD</span>
+
+                            <span class="profile-menu__details">
+                                <span class="profile-menu__name" data-admin-name>
+                                    Admin User
+                                </span>
+
+                                <span class="profile-menu__role">
+                                    Administrator
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="page-container">
+                    <section class="module-page-header payslip-page-header">
+                        <div>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="admin.html">Dashboard</a>
+                                    </li>
+
+                                    <li
+                                        class="breadcrumb-item active"
+                                        aria-current="page"
+                                    >
+                                        Payslips
+                                    </li>
+                                </ol>
+                            </nav>
+
+                            <h1 class="page-title">Payslip Management</h1>
+
+                            <p class="page-subtitle">
+                                Review employee salary breakdowns and prepare
+                                printable payslips.
+                            </p>
+                        </div>
+
+                        <div class="module-header-actions">
+                            <span class="demo-payroll-label">
+                                <i class="bi bi-info-circle"></i>
+                                Demo Payroll
+                            </span>
+
+                            <button
+                                class="btn btn-primary"
+                                id="payslip-print"
+                                type="button"
+                            >
+                                <i class="bi bi-printer me-1"></i>
+                                Print payslip
+                            </button>
+                        </div>
+                    </section>
+
+                    <div
+                        id="payslip-alert"
+                        class="alert"
+                        role="status"
+                        hidden
+                    ></div>
+
+                    <!-- Payroll Summary -->
+                    <section class="employee-summary-grid payroll-summary-grid">
+                        <article class="employee-summary-card">
+                            <span
+                                class="employee-summary-card__icon employee-summary-card__icon--blue"
+                            >
+                                <i class="bi bi-people"></i>
+                            </span>
+
+                            <div>
+                                <span>Employees with payroll</span>
+                                <strong id="payroll-employee-count">0</strong>
+                                <small>Saved payroll records</small>
+                            </div>
+                        </article>
+
+                        <article class="employee-summary-card">
+                            <span
+                                class="employee-summary-card__icon employee-summary-card__icon--violet"
+                            >
+                                <i class="bi bi-calendar3"></i>
+                            </span>
+
+                            <div>
+                                <span>Selected pay period</span>
+
+                                <strong
+                                    class="payroll-period-value"
+                                    id="payroll-period-summary"
+                                >
+                                    —
+                                </strong>
+
+                                <small>Current filter period</small>
+                            </div>
+                        </article>
+
+                        <article class="employee-summary-card">
+                            <span
+                                class="employee-summary-card__icon employee-summary-card__icon--green"
+                            >
+                                <i class="bi bi-cash-stack"></i>
+                            </span>
+
+                            <div>
+                                <span>Total earnings</span>
+                                <strong id="payroll-total-earnings">—</strong>
+                                <small>Matching saved records</small>
+                            </div>
+                        </article>
+
+                        <article class="employee-summary-card">
+                            <span
+                                class="employee-summary-card__icon employee-summary-card__icon--amber"
+                            >
+                                <i class="bi bi-receipt"></i>
+                            </span>
+
+                            <div>
+                                <span>Total deductions</span>
+                                <strong id="payroll-total-deductions">—</strong>
+                                <small>Matching saved records</small>
+                            </div>
+                        </article>
+                    </section>
+
+                    <!-- Payslip Filters -->
+                    <section class="app-card payslip-filter-card">
+                        <div class="app-card__header">
+                            <div>
+                                <h2 class="section-title">Select payslip</h2>
+
+                                <p class="section-subtitle">
+                                    Choose an employee and period to view an
+                                    existing record or create an explicitly
+                                    labelled demo record.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="app-card__body">
+                            <div class="payslip-filters">
+                                <div>
+                                    <label
+                                        class="form-label"
+                                        for="payroll-employee"
+                                    >
+                                        Employee
+                                    </label>
+
+                                    <select
+                                        class="form-select"
+                                        id="payroll-employee"
+                                    >
+                                        <option value="">Choose employee</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label
+                                        class="form-label"
+                                        for="payroll-month"
+                                    >
+                                        Pay month
+                                    </label>
+
+                                    <select
+                                        class="form-select"
+                                        id="payroll-month"
+                                    ></select>
+                                </div>
+
+                                <div>
+                                    <label
+                                        class="form-label"
+                                        for="payroll-year"
+                                    >
+                                        Pay year
+                                    </label>
+
+                                    <select
+                                        class="form-select"
+                                        id="payroll-year"
+                                    ></select>
+                                </div>
+
+                                <div class="payslip-filter-actions">
+                                    <button
+                                        class="btn btn-primary"
+                                        id="payroll-view"
+                                        type="button"
+                                    >
+                                        <i
+                                            class="bi bi-file-earmark-text me-1"
+                                        ></i>
+                                        View payslip
+                                    </button>
+
+                                    <button
+                                        class="btn btn-outline-secondary"
+                                        id="payroll-clear"
+                                        type="button"
+                                    >
+                                        Clear
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="payslip-data-actions">
+                                <span
+                                    class="small text-muted"
+                                    id="payroll-record-hint"
+                                >
+                                    Payroll figures are not available until a
+                                    record is saved.
+                                </span>
+
+                                <button
+                                    class="btn btn-sm btn-outline-primary"
+                                    id="payroll-create-demo"
+                                    type="button"
+                                >
+                                    <i class="bi bi-plus-circle me-1"></i>
+                                    Create illustrative demo record
+                                </button>
+                            </div>
+
+                            <div class="alert alert-info mt-3 mb-0 small">
+                                Demo records are illustrative only and are
+                                stored separately from employee profiles.
+                                Do not use this page for actual payroll
+                                processing.
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Payslip Document -->
+                    <section
+                        class="app-card payslip-document-card"
+                        id="payslip-document-section"
+                    >
+                        <div
+                            id="payslip-empty"
+                            class="employee-empty-state"
+                        >
+                            <span class="employee-empty-state__icon">
+                                <i class="bi bi-file-earmark-person"></i>
+                            </span>
+
+                            <h3 id="payslip-empty-title">
+                                Choose an employee and pay period
+                            </h3>
+
+                            <p id="payslip-empty-text">
+                                If no record exists for that exact period,
+                                create an illustrative demo record or add
+                                payroll data to local demo storage.
+                            </p>
+
+                            <a
+                                href="employees.html"
+                                class="btn btn-outline-primary btn-sm"
+                            >
+                                Open employee directory
+                            </a>
+                        </div>
+
+                        <article
+                            class="payslip-document"
+                            id="payslip-document"
+                            hidden
+                        >
+                            <header class="payslip-document__header">
+                                <div>
+                                    <div class="payslip-brand-mark">N</div>
+
+                                    <h2 data-company-name>
+                                        Nexora HR Solutions
+                                    </h2>
+
+                                    <p>People • Performance • Progress</p>
+                                </div>
+
+                                <div class="text-end">
+                                    <span
+                                        class="payslip-demo-stamp"
+                                        id="payslip-demo-stamp"
+                                    >
+                                        DEMO
+                                    </span>
+
+                                    <h3>EMPLOYEE PAYSLIP</h3>
+
+                                    <p id="payslip-period-label">Pay period</p>
+                                </div>
+                            </header>
+
+                            <!-- Employee Details -->
+                            <div class="payslip-employee-details">
+                                <div>
+                                    <span>Employee name</span>
+                                    <strong id="slip-employee-name">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Employee ID</span>
+                                    <strong id="slip-employee-id">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Job title</span>
+                                    <strong id="slip-employee-title">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Department</span>
+                                    <strong id="slip-employee-department">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Email</span>
+                                    <strong id="slip-employee-email">—</strong>
+                                </div>
+
+                                <div>
+                                    <span>Payment date</span>
+                                    <strong id="slip-payment-date">—</strong>
+                                </div>
+                            </div>
+
+                            <!-- Earnings and Deductions -->
+                            <div class="payslip-breakdown-grid">
+                                <section>
+                                    <h4>
+                                        <i class="bi bi-plus-circle me-2"></i>
+                                        Earnings
+                                    </h4>
+
+                                    <div
+                                        id="slip-earnings"
+                                        class="payslip-line-items"
+                                    ></div>
+
+                                    <div class="payslip-subtotal">
+                                        <span>Gross earnings</span>
+                                        <strong id="slip-gross">—</strong>
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <h4>
+                                        <i class="bi bi-dash-circle me-2"></i>
+                                        Deductions
+                                    </h4>
+
+                                    <div
+                                        id="slip-deductions"
+                                        class="payslip-line-items"
+                                    ></div>
+
+                                    <div class="payslip-subtotal">
+                                        <span>Total deductions</span>
+                                        <strong id="slip-deductions-total">—</strong>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <div
+                                id="payslip-warning"
+                                class="alert alert-warning small"
+                                hidden
+                            ></div>
+
+                            <!-- Net Salary -->
+                            <footer class="payslip-net-total">
+                                <span>
+                                    <small>NET SALARY</small>
+                                    <strong>
+                                        Take-home pay for this period
+                                    </strong>
+                                </span>
+
+                                <strong id="slip-net">—</strong>
+                            </footer>
+
+                            <p class="payslip-document-footnote">
+                                Generated by HCM Lite demo workspace.
+                                This document is illustrative and is not
+                                an official payroll statement.
+                            </p>
+                        </article>
+                    </section>
+
+                    <footer class="dashboard-footer">
+                        HCM Lite
+                        <span>·</span>
+                        People • Performance • Progress
+
+                        <span class="ms-auto">
+                            Demo workspace · Data stays in this browser
+                        </span>
+                    </footer>
+                </div>
+            </main>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div
+            class="toast-container position-fixed bottom-0 end-0 p-3"
+            style="z-index: 1090"
+        >
+            <div
+                id="global-toast"
+                class="toast employee-toast"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+            >
+                <div class="toast-header">
+                    <i class="bi bi-check-circle toast-status-icon"></i>
+
+                    <strong class="me-auto" id="global-toast-title">
+                        Updated
+                    </strong>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                    ></button>
+                </div>
+
+                <div
+                    class="toast-body"
+                    id="global-toast-message"
+                ></div>
+            </div>
+        </div>
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Project JavaScript -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
